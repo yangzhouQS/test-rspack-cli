@@ -2,13 +2,6 @@
   "name": "test-rspack-cli",
   "version": "1.6.3",
   "description": "CLI for webpages-packer",
-  "homepage": "https://gitea.yearrow.com/yearrow/webpages-packer",
-  "bugs": "https://gitea.yearrow.com/yearrow/webpages-packer",
-  "repository": {
-    "type": "git",
-    "url": "https://gitea.yearrow.com/yearrow/webpages-packer",
-    "directory": "packages/webpages-packer"
-  },
   "license": "MIT",
   "exports": {
     ".": {
@@ -21,6 +14,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
+    "rspack": "./bin/rspack.js",
     "webpages-packer": "./bin/webpages-packer.js",
     "webpages-server": "./bin/webpages-server.js"
   },
@@ -32,7 +26,6 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build -w",
-    "test": "rstest",
     "publish:beta": "npm publish --tag=beta",
     "trash-cli": "trash node_modules",
     "ri": "rimraf node_modules",
