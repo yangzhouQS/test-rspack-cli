@@ -1,0 +1,63 @@
+{
+  "name": "test-rspack-cli",
+  "version": "1.6.3",
+  "description": "CLI for webpages-packer",
+  "homepage": "https://gitea.yearrow.com/yearrow/webpages-packer",
+  "bugs": "https://gitea.yearrow.com/yearrow/webpages-packer",
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.yearrow.com/yearrow/webpages-packer",
+    "directory": "packages/webpages-packer"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "webpages-packer": "./bin/webpages-packer.js",
+    "webpages-server": "./bin/webpages-server.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build -w",
+    "test": "rstest",
+    "publish:beta": "npm publish --tag=beta",
+    "trash-cli": "trash node_modules",
+    "ri": "rimraf node_modules",
+    "pnpm:install": "pnpm i --force"
+  },
+  "dependencies": {
+    "@discoveryjs/json-ext": "^0.5.7",
+    "@rspack/dev-server": "~1.1.4",
+    "exit-hook": "^4.0.0",
+    "webpack-bundle-analyzer": "4.10.2"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.17.1",
+    "@rspack/core": "^1.6.3",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
+    "cac": "^6.7.14",
+    "concat-stream": "^2.0.0",
+    "cross-env": "^10.1.0",
+    "execa": "^5.1.1",
+    "picocolors": "^1.1.1",
+    "pirates": "^4.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@rspack/core": "^1.0.0-alpha || ^1.x"
+  }
+}
